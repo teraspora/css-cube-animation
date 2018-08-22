@@ -1,5 +1,4 @@
 # Cube animation
-================
 
 This is a basic animation of a cube, which I made in order to learn about CSS transitions, transforms and animations.
 
@@ -7,7 +6,7 @@ I create 6 faces then transform them by translation and rotation into their corr
 
 The properties
 
-```
+```css
 display: flex;
 align-items: center;
 justify-content: center;
@@ -19,7 +18,7 @@ The animation just gradually zooms in and rotates about each axis in turn.
 Many thanks to the authors of all the many tutorials and guides to CSS transforms and animations that have taught me what I have learned so far.
 
 ## To do:
-=======
+
 - Factor out widths and heights into custom properties (a.k.a.CSS variables).
 
 - Learn Sass properly so I can do the keyframes etc. in a loop.
