@@ -1,0 +1,109 @@
+:root {
+  --imgA: url(../imgs/img00.png);
+  --imgB: url(../imgs/img01.png);
+  --imgC: url(../imgs/img02.png);
+  --imgD: url(../imgs/img03.png);
+  --imgE: url(../imgs/img04.png);
+  --imgF: url(../imgs/img05.png);
+}
+
+@keyframes rotate {
+  0%   {transform: scale3d(0.002, 0.002, 0.002) rotateX(0)}
+  5%   {transform: scale3d(0.004, 0.004, 0.004) rotateY(90deg)}
+  10%  {transform: scale3d(0.008, 0.008, 0.008) rotateZ(-90deg)}
+  15%  {transform: scale3d(0.016, 0.016, 0.016) rotateX(90deg)}
+  20%  {transform: scale3d(0.032, 0.032, 0.032) rotateY(180deg)}
+  25%  {transform: scale3d(0.064, 0.064, 0.064) rotateZ(90deg)}
+  30%  {transform: scale3d(0.128, 0.128, 0.128) rotateX(-90deg)}
+  35%  {transform: scale3d(0.256, 0.256, 0.256) rotateY(-90deg)}
+  40%  {transform: scale3d(0.512, 0.512, 0.512) rotateZ(90deg)}
+  45%  {transform: scale3d(1.024, 1.024, 1.024) rotateX(90deg)}
+  50%  {transform: scale3d(1.1, 1.1, 1.1) rotateY(90deg)}
+  55%  {transform: scale3d(1.2, 1.2, 1.2) rotateZ(-90deg)}
+  60%  {transform: scale3d(1.3, 1.3, 1.3) rotateX(90deg)}
+  65%  {transform: scale3d(1.4, 1.4, 1.4) rotateY(90deg)}
+  70%  {transform: scale3d(1.5, 1.5, 1.5) rotateZ(90deg)}
+  75%  {transform: scale3d(1.6, 1.6, 1.6) rotateX(-90deg)}
+  80%  {transform: scale3d(1.7, 1.7, 1.7) rotateY(-90deg)}
+  85%  {transform: scale3d(1.8, 1.8, 1.8) rotateZ(90deg)}
+  90%  {transform: scale3d(1.9, 1.9, 1.9) rotateX(90deg)}
+  95%  {transform: scale3d(2.0, 2.0, 2.0) rotateY(90deg)}
+  100% {transform: scale3d(2.1, 2.1, 2.1) rotateZ(-90deg)}
+}
+
+* {
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+html, body {
+  height:100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+}
+
+.scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  perspective: 800px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+.cube {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    animation: rotate 24s ease-in-out alternate infinite;
+  }
+
+.face {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    border-radius: 10%;
+}
+
+#front {
+    background-image: var(--imgA);
+    transform: translateZ(200px);
+}
+
+#back {
+    background-image: var(--imgB);
+    transform: rotateY(180deg) translateZ(200px);    
+}
+
+#left {
+    background-image: var(--imgC);
+    transform: rotateY(90deg) translateZ(200px);    
+}
+
+#right {
+    background-image: var(--imgD);
+    transform: rotateY(-90deg) translateZ(200px);    
+}
+
+#top {
+    background-image: var(--imgE);
+    transform: rotateX(90deg) translateZ(200px);    
+}
+
+#bottom {
+    background-image: var(--imgF);
+    transform: rotateX(-90deg) translateZ(200px);    
